@@ -3,7 +3,7 @@
 //console.log('##### 1. Write a function that takes a string and reverses it.')
 function reverseWord(string){
 	let newString = ''
-	for (let i = string.length-1; i > -1; --i){
+	for (let i = string.length-1; i >=0; --i){
 
 		newString += string[i]
 	}
@@ -61,7 +61,7 @@ function averageArray(array){
 	let count = 0
 	for(let i = 0; i < array.length; i++){
 		if(array[i] > 0){
-			sumIntValue+= +array[i]
+			sumIntValue+= parseInt(array[i])
 			count++
 		}
 
@@ -75,23 +75,62 @@ averageArray([3, 9, 'hello', 4, '95', 'abc', '1', 8, { key: 'value ' }])
 // 20
 
 
+//##### 6.  Write a function that takes an array of cars and a markup percent. Return an object which contains 
+//the total markup of all cars and an array of cars with their name as the key and the value as the calculated markup.  (25 pts)
+const cars = [
+  { type: 'hybrid', wholesale: 25000 },
+  { type: 'minivan', wholesale: 28000 },
+  { type: 'sedan', wholesale: 31500 },
+  { type: 'convertible', wholesale: 45750 }
+]
+
+let total = 0
+
+// function markupValue(array, markupPercent){
+// 	let keyValue={}
+// 	// let a = []
+// 	keyValue.cars = []
+// 	// cars.cars = a
+// 	for(let i = 0; i < array.length; i++){
+// 		// i = cars['type']
+// 		// keyValue.cars.push(i)
+// 		console.log(array.type['type'])
+// 	}
+// 	console.log(keyValue)
+// }
+// markupValue(cars, 10.5)
 
 
-
-
-
-//##### 6.  Write a function that takes an array of cars and a markup percent. Return an object which contains the total markup of all cars and an array of cars with their name as the key and the value as the calculated markup.  (25 pts)
-
-    // const cars = [
-    //   { type: 'hybrid', wholesale: 25000 },
-    //   { type: 'minivan', wholesale: 28000 },
-    //   { type: 'sedan', wholesale: 31500 },
-    //   { type: 'convertible', wholesale: 45750 }
-    // ]
-    // markupValue(cars, 10.5)
     // { cars:
     //    [ { hybrid: 27625 },
     //      { minivan: 30940 },
     //      { sedan: 34807.5 },
     //      { convertible: 50553.75 } ],
     //   total: 13676.25 }
+
+
+// const transformer = {
+//   name : 'Optimus Prime',
+//   teams: 'Autobots',
+//   colors: ['red', 'blue', 'white'],
+//   example: {
+//     nested:true
+//   }
+// }
+// transformer.homeworld = 'cybertron'
+// transformer['vehicle']='truck'
+
+// console.log(transformer)
+
+// console.log(transformer.name)
+
+// console.log(transformer.example.nested)
+
+// { name: 'Optimus Prime',
+//   teams: 'Autobots',
+//   colors: [ 'red', 'blue', 'white' ],
+//   example: { nested: true },
+//   homeworld: 'cybertron',
+//   vehicle: 'truck' }
+// Optimus Prime
+// true
