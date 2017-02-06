@@ -1,4 +1,4 @@
-//console.log('--------------------------WEEK01 CS4220 YOSEPKIM----------------------')
+// console.log('--------------------------WEEK01 CS4220 YOSEPKIM----------------------')
 
 //console.log('##### 1. Write a function that takes a string and reverses it.')
 function reverseWord(string){
@@ -11,29 +11,30 @@ function reverseWord(string){
 	return newString;
 
 }
-
 reverseWord('hello')
 reverseWord('world')
 console.log()
 
+
 //##### 2. Write a function that takes a string and replaces all the vowels (a, e, i, o, u) with *
 function replaceVowels(string){
 	let replaceVowelString = ''
-	for(let i = 0; i < string.length; i++){
+	for(let i = 0; i < string.length; ++i){
 		if ((string[i] == 'a') || (string[i] == 'e') 
 			|| (string[i] == 'i') || (string[i] == 'o') 
 			|| (string[i] == 'u')){
-			replaceVowelString += '*'	
+			replaceVowelString += '*'
+			i++
 		}
 		replaceVowelString += string[i]
 	}
 	console.log(replaceVowelString)
 	return replaceVowelString
 }
-
 replaceVowels('javascript') 
 replaceVowels('angular')  
 console.log()
+
 
 //##### 3. Write a function that finds letters in the array and outputs their occurances as an object.  The key is the letter and the count is the value. (15 pts)
 function countLetters(array){
@@ -55,6 +56,25 @@ countLetters(['z', 'y', 'x', 'x', 'w', 'z', 'y', 'u', 'y', 'y'])
 console.log()
 
 
+// ##### 4.  Write a function that creates two new arrays odds and evens. (15 pts)
+function oddsAndEvens(array){
+	odds = [] 
+	evens = []
+	for (let i = 0; i < array.length; i++){
+		if (array[i] % 2 == 0){
+			evens.push(array[i])
+		}
+		if (array[i] % 2 != 0){
+			odds.push(array[i])
+		}
+	}
+	console.log("odds = [" + odds + "]")
+	console.log("evens = [" + evens + "]")
+}
+    oddsAndEvens([ 21, 99, 43, 1, 8, 2, 48, 82 ])
+    console.log()
+
+
 //##### 5. Write a function that averages all the numbers including string value numbers in an array.  (15 pts)
 function averageArray(array){
 	let sumIntValue = 0
@@ -64,14 +84,12 @@ function averageArray(array){
 			sumIntValue+= parseInt(array[i])
 			count++
 		}
-
 	}
 	let averageValue = sumIntValue/count
-
 	console.log(averageValue)
 }
-
 averageArray([3, 9, 'hello', 4, '95', 'abc', '1', 8, { key: 'value ' }])
+console.log()
 // 20
 
 
@@ -84,53 +102,18 @@ const cars = [
   { type: 'convertible', wholesale: 45750 }
 ]
 
-let total = 0
+function markupValue(array,markupPercent){
+	let total = 0
+	const keysAndValues={cars: [], total : 0}
+	let cars=[]
+	for(let i = 0; i < array.length; i++){
+		total+= (array[i].wholesale * (markupPercent/100))
+		cars.push({[array[i].type] : (array[i].wholesale * (markupPercent/100)) + array[i].wholesale})
 
-// function markupValue(array, markupPercent){
-// 	let keyValue={}
-// 	// let a = []
-// 	keyValue.cars = []
-// 	// cars.cars = a
-// 	for(let i = 0; i < array.length; i++){
-// 		// i = cars['type']
-// 		// keyValue.cars.push(i)
-// 		console.log(array.type['type'])
-// 	}
-// 	console.log(keyValue)
-// }
-// markupValue(cars, 10.5)
+	}
+	keysAndValues['cars'] = cars
+	keysAndValues['total'] = total
+	console.log(keysAndValues)
+}
+markupValue(cars, 10.5)
 
-
-    // { cars:
-    //    [ { hybrid: 27625 },
-    //      { minivan: 30940 },
-    //      { sedan: 34807.5 },
-    //      { convertible: 50553.75 } ],
-    //   total: 13676.25 }
-
-
-// const transformer = {
-//   name : 'Optimus Prime',
-//   teams: 'Autobots',
-//   colors: ['red', 'blue', 'white'],
-//   example: {
-//     nested:true
-//   }
-// }
-// transformer.homeworld = 'cybertron'
-// transformer['vehicle']='truck'
-
-// console.log(transformer)
-
-// console.log(transformer.name)
-
-// console.log(transformer.example.nested)
-
-// { name: 'Optimus Prime',
-//   teams: 'Autobots',
-//   colors: [ 'red', 'blue', 'white' ],
-//   example: { nested: true },
-//   homeworld: 'cybertron',
-//   vehicle: 'truck' }
-// Optimus Prime
-// true
